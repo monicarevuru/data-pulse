@@ -64,3 +64,8 @@
     --color-quinary-950: #130502;
     --card: #fff;
 }
+
+html {
+    scroll-behavior: smooth;
+    transition: all 0.3s ease-in-out;
+}

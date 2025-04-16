@@ -45,14 +45,15 @@ interface FeatureItemProps {
   description: string;
   icon: keyof typeof LucideIcons;
   index: number;
+  isInView: boolean;
 }
 
-export const FeatureItem = ({ name, description, icon, index }: FeatureItemProps) => {
+export const FeatureItem = ({ name, description, icon, index, isInView }: FeatureItemProps) => {
   const IconComponent = LucideIcons[icon] as React.ElementType;
 
 
   return (
-    <motion.div className="relative pl-16 feature-item" variants={itemVariants}>
+    <motion.div key={`feature-${index}`} className="relative pl-16 feature-item" variants={itemVariants}>
       <dt className="text-base font-semibold leading-7 text-gray-900">
         <motion.div
           className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary"
@@ -64,8 +65,8 @@ export const FeatureItem = ({ name, description, icon, index }: FeatureItemProps
         </motion.div>
         <motion.span
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 + index * 0.05, duration: 0.5 }}
+          animate={isInView ? {opacity: 1, y: 0} : { opacity: 0, y: 10 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
           {name}
         </motion.span>
@@ -73,8 +74,8 @@ export const FeatureItem = ({ name, description, icon, index }: FeatureItemProps
       <motion.dd
         className="mt-2 text-base leading-7 text-gray-600"
         initial={{ opacity: 0, x: -10 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3 + index * 0.05, duration: 0.5 }}
+        animate={isInView ? { opacity: 1, x: 0 } : {opacity: 0, y: -10}}
+        transition={{ delay: 0.3, duration: 0.5 }}
       >
         {description}
       </motion.dd>

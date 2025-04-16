@@ -15,7 +15,7 @@ import { tiers } from "../constants.ts/HomeConstants";
 const Pricing = () => {
   const [annual, setAnnual] = useState(true);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
     <section id="pricing" className="py-24 sm:py-32 bg-white">

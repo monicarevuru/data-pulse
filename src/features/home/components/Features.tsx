@@ -16,7 +16,7 @@ const containerVariants = {
 const Features = () => {
   const ref = useRef(null);
   const controls = useAnimation();
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   useEffect(() => {
     if (isInView) {
@@ -44,7 +44,7 @@ const Features = () => {
             animate={controls}
           >
             {features.map((feature, index) => (
-              <FeatureItem key={feature.name} {...feature} index={index} />
+              <FeatureItem key={feature.name} {...feature} index={index} isInView={isInView} />
             ))}
           </motion.dl>
         </div>

@@ -16,10 +16,10 @@ const TestimonialItem = ({ testimonial, index, isInView }: {testimonial: Testimo
 
   return (
     <motion.div
-    key={index}
+    key={`testimonial-${index}`}
     initial={{ opacity: 0, y: 20 }}
     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-    transition={{ duration: 1, delay: index * 0.2 }}>
+    transition={{ duration: 0.8, delay: 0.3 }}>
     <Card className="h-full transition-all duration-200 hover:shadow-md hover:-translate-y-1">
       <CardContent className="p-4 flex flex-col h-full">
         <div className="flex-grow">
