@@ -9,7 +9,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="py-24 sm:py-32 bg-gray-50">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8" ref={ref}>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
             Testimonials
@@ -23,7 +23,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div ref={ref} className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <TestimonialItem testimonial={testimonial} index={index} isInView={isInView}></TestimonialItem>
           ))}
