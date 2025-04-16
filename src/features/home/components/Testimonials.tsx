@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const testimonials = [
   {
-    content: "SalePilot has transformed how we communicate with clients. Being able to share real-time dashboards with them has increased transparency and trust.",
+    content: "DataPulse has transformed how we communicate with clients. Being able to share real-time dashboards with them has increased transparency and trust.",
     author: {
       name: "Sarah Johnson",
       title: "CTO at TechNova",
@@ -37,7 +37,7 @@ const testimonials = [
     }
   },
   {
-    content: "Our client satisfaction scores have increased by 40% since implementing SalePilot. The transparency it provides has completely changed our client relationships.",
+    content: "Our client satisfaction scores have increased by 40% since implementing DataPulse. The transparency it provides has completely changed our client relationships.",
     author: {
       name: "Emma Williams",
       title: "Client Success Director at DevShop",
@@ -67,7 +67,7 @@ const Testimonials = () => {
             Loved by developers and teams worldwide
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            See what our customers have to say about how SalePilot has transformed their data communication.
+            See what our customers have to say about how DataPulse has transformed their data communication.
           </p>
         </div>
         

@@ -238,7 +238,7 @@ const Hero = () => {
               fontSize="18"
               fontWeight="600"
               fill="#1E40AF">
-              SalePilot Analytics
+              DataPulse Analytics
             </text>
             <circle cx="850" cy="30" r="20" fill="#E6F0FF" />
             <text

@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <LineChart className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">SalePilot</span>
+              <span className="text-xl font-bold">DataPulse</span>
             </div>
             <p className="text-sm leading-6 text-gray-300">
               Making data communication simple and effective for development teams worldwide.
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 mt-8">
-          <p className="text-xs leading-5 text-gray-400">&copy; {new Date().getFullYear()} SalePilot, Inc. All rights reserved.</p>
+          <p className="text-xs leading-5 text-gray-400">&copy; {new Date().getFullYear()} DataPulse, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>

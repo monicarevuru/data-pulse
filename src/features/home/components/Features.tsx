@@ -127,7 +127,7 @@ const Features = () => {
             Everything you need to analyze, collaborate, and communicate
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            SalePilot combines powerful analytics with team collaboration tools to help you make data-driven decisions and share insights easily.
+            DataPulse combines powerful analytics with team collaboration tools to help you make data-driven decisions and share insights easily.
           </p>
         </div>
         <div 

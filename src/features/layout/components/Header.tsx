@@ -40,7 +40,7 @@ const Header: React.FC = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  SalePilot
+                  DataPulse
                 </motion.span>
               </a>
             </div>
