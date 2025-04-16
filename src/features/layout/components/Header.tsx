@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { X, Menu, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/common/components/ui/button";
 
 const Header: React.FC = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

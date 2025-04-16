@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/common/components/ui/card";
 import { Avatar, AvatarFallback } from "@radix-ui/react-avatar";
 import { Quote } from "lucide-react";
 import { motion } from "framer-motion";

@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/common/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/common/components/ui/card";
 import { CheckIcon } from "lucide-react";
 import { tiers } from "../constants.ts/HomeConstants";
 

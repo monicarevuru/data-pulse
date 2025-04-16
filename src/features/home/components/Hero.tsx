@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/common/components/ui/button";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 const Hero = () => {
