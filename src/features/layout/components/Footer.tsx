@@ -2,12 +2,12 @@ import { LineChart, Twitter, Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-primary-600 text-white">
       <div className="mx-auto max-w-7xl p-6 lg:px-8">
         <div className="xl:gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <LineChart className="h-6 w-6 text-primary" />
+              <LineChart className="h-6 w-6 text-white" />
               <span className="text-xl font-bold">DataPulse</span>
             </div>
             <p className="text-sm leading-6 text-gray-300">
