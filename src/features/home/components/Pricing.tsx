@@ -63,7 +63,7 @@ const Pricing = () => {
             <motion.div
               key={tier.id}
               className={`${
-                tier.highlighted ? "z-10 relative mx-2 lg:mt-0" : "sm:my-8 lg:mt-0"
+                tier.highlighted ? "z-10 relative mx-2 sm:my-0 lg:my-0" : "sm:my-8 lg:my-0"
               } flex flex-col`}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
