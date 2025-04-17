@@ -20,7 +20,7 @@ const Header: React.FC = () => {
     return (
       <header 
         className={`sticky top-0 z-50 w-full transition-all duration-200 ${
-          scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
+          scrolled ? "backdrop-blur-sm shadow-2xl bg-linear-[60deg,var(--color-primary-600)_0%,var(--color-primary-700)_50%,var(--color-primary-700)_100%]" : "bg-transparent"
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -29,13 +29,14 @@ const Header: React.FC = () => {
               <a href="/" className="flex items-center space-x-2">
                 <motion.div
                   initial={{ rotate: -10, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
+                  animate={scrolled ? { rotate: -10, opacity: 1 } : { rotate: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
+                  whileTap={{ rotate: -10, opacity: 1 }}
                 >
-                  <LineChart className="h-8 w-8 text-primary" />
+                  <LineChart className={`h-8 w-8 ${scrolled ? 'text-white' : 'text-primary'}`} />
                 </motion.div>
                 <motion.span 
-                  className="text-xl font-bold text-gray-900"
+                  className={`text-xl font-bold ${scrolled ? 'text-white' : 'text-gray-900'}`}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
@@ -46,13 +47,13 @@ const Header: React.FC = () => {
             </div>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              <a href="#features" className={`text-sm font-medium hover:text-primary transition-colors ${scrolled ? 'text-white' : 'text-gray-700'}`}>
                 Features
               </a>
-              <a href="#testimonials" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              <a href="#testimonials" className={`text-sm font-medium hover:text-primary transition-colors ${scrolled ? 'text-white' : 'text-gray-700'}`}>
                 Testimonials
               </a>
-              <a href="#pricing" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              <a href="#pricing" className={`text-sm font-medium hover:text-primary transition-colors ${scrolled ? 'text-white' : 'text-gray-700'}`}>
                 Pricing
               </a>
               <Button variant="outline" size="sm" asChild>
@@ -66,7 +67,7 @@ const Header: React.FC = () => {
             <div className="flex md:hidden">
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-md p-2 text-gray-700"
+                className={`inline-flex items-center justify-center rounded-md p-2 ${scrolled ? 'text-white' : 'text-gray-700'}`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 <span className="sr-only">Open main menu</span>

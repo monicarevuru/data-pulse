@@ -18,7 +18,7 @@ const Pricing = () => {
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
-    <section id="pricing" className="py-24 sm:py-32 bg-white">
+    <section id="pricing" className="py-10 sm:py-20 bg-white">
       <div ref={ref} className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">

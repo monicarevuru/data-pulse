@@ -93,7 +93,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative overflow-hidden pt-16 pb-24 sm:pt-24"
+      className="relative overflow-hidden py-10 sm:py-20"
       ref={heroRef}>
       {/* Background elements */}
       <motion.div
@@ -177,7 +177,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="mt-20 flow-root sm:mt-40"
+          className="mt-16 flow-root sm:mt-32"
           variants={dashboardVariants}
           initial="hidden"
           animate={controls}

@@ -2,7 +2,7 @@ import { LineChart, Twitter, Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-600 text-white">
+    <footer className="bg-linear-[60deg,var(--color-primary-600)_0%,var(--color-primary-700)_50%,var(--color-primary-700)_100%] shadow-2xl text-white">
       <div className="mx-auto max-w-7xl p-6 lg:px-8">
         <div className="xl:gap-8">
           <div className="space-y-4">
