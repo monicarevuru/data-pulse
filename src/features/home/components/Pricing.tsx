@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/common/components/ui/card";
 import { CheckIcon } from "lucide-react";
-import { tiers } from "../constants.ts/HomeConstants";
+import { C_PRICING, tiers } from "../constants.ts/HomeConstants";
 
 const Pricing = () => {
   const [annual, setAnnual] = useState(true);
@@ -22,40 +22,41 @@ const Pricing = () => {
       <div ref={ref} className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
-            Pricing
+            {C_PRICING.title}
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Find a plan that fits your needs
+          {C_PRICING.shortDescription}
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Choose the right plan for your team's size and requirements. All
-            plans include our core analytics features.
+          {C_PRICING.description}
           </p>
 
           {/* Billing toggle */}
-          <div className="mt-8 flex justify-center">
-            <div className="relative flex rounded-full bg-gray-100 p-1">
-              <button
-                type="button"
-                className={`${
-                  !annual ? "bg-white shadow-sm text-gray-900" : "text-gray-500"
-                } relative rounded-full py-2 px-4 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary`}
+            <div className="mt-8 flex justify-center">
+            <div className="relative flex">
+              <div className="flex items-center space-x-2 bg-gray-100 p-1 rounded-full">
+              <Button
+                variant={annual ? "ghost" : "default"}
+                className={`rounded-2xl m-0 ${
+                !annual ? "bg-white shadow-sm text-gray-900 hover:text-white" : "text-gray-500"
+                } py-2 px-4 text-sm font-medium whitespace-nowrap transition-all duration-400 ease-in`}
                 onClick={() => setAnnual(false)}>
-                Monthly
-              </button>
-              <button
-                type="button"
-                className={`${
-                  annual ? "bg-white shadow-sm text-gray-900" : "text-gray-500"
-                } relative rounded-full py-2 px-4 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary`}
+                {C_PRICING.buttons.monthly.text}
+              </Button>
+              <Button
+                variant={annual ? "default" : "ghost"}
+                className={`rounded-2xl m-0 ${
+                annual ? "bg-white shadow-sm group text-gray-900 hover:text-white" : "text-gray-500"
+                } py-2 px-4 text-sm font-medium whitespace-nowrap transition-all duration-400 ease-in`}
                 onClick={() => setAnnual(true)}>
-                Annual{" "}
-                <span className="text-primary text-xs font-bold ml-1">
-                  -20%
+                {C_PRICING.buttons.annual.text}
+                <span className="text-primary text-xs font-bold ml-1 group-hover:text-white transition-all duration-400 ease-in">
+                -20%
                 </span>
-              </button>
+              </Button>
+              </div>
             </div>
-          </div>
+            </div>
         </div>
 
         <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
@@ -63,7 +64,9 @@ const Pricing = () => {
             <motion.div
               key={tier.id}
               className={`${
-                tier.highlighted ? "z-10 relative mx-2 sm:my-0 lg:my-0" : "sm:my-8 lg:my-0"
+                tier.highlighted
+                  ? "z-10 relative mx-2 sm:my-0 lg:my-0"
+                  : "sm:my-8 lg:my-0"
               } flex flex-col`}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

@@ -173,3 +173,48 @@ export const features = [
     icon: E_LucideFeatureIcons.PencilRuler,
   },
 ];
+
+export const C_HERO = {
+  title: "New Features Available",
+  shortDescription: "Data insights that drive growth",
+  description:
+    "Powerful analytics and team collaboration for developers. Share insights with clients and make informed decisions faster.",
+  buttons: {
+    free_trial: {
+      text: "Start free trial",
+    },
+    learn_more: {
+      text: "Learn more",
+    },
+  },
+};
+
+export const C_FEATURES = {
+  title: "Powerful Features",
+  shortDescription:
+    "Everything you need to analyze, collaborate, and communicate",
+  description:
+    "DataPulse combines powerful analytics with team collaboration tools to help you make data-driven decisions and share insights easily.",
+};
+
+export const C_TESTIMONIALS = {
+  title: "Testimonials",
+  shortDescription: "Loved by developers and teams worldwide",
+  description:
+    "See what our customers have to say about how DataPulse has transformed their data communication.",
+};
+
+export const C_PRICING = {
+  title: "Pricing",
+  shortDescription: "Find a plan that fits your needs",
+  description:
+    "Choose the right plan for your team's size and requirements. All plans include our core analytics features.",
+  buttons: {
+    annual: {
+      text: "Annual",
+    },
+    monthly: {
+      text: "Monthly",
+    },
+  },
+};

@@ -47,13 +47,13 @@ const Header: React.FC = () => {
             </div>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#features" className={`text-sm font-medium hover:text-primary transition-colors ${scrolled ? 'text-white' : 'text-gray-700'}`}>
+              <a href="#features" className={`text-sm font-medium transition-colors ${scrolled ? 'text-white hover:text-gray-200' : 'text-gray-700 hover:text-primary'}`}>
                 Features
               </a>
-              <a href="#testimonials" className={`text-sm font-medium hover:text-primary transition-colors ${scrolled ? 'text-white' : 'text-gray-700'}`}>
+              <a href="#testimonials" className={`text-sm font-medium transition-colors ${scrolled ? 'text-white hover:text-gray-200' : 'text-gray-700 hover:text-primary'}`}>
                 Testimonials
               </a>
-              <a href="#pricing" className={`text-sm font-medium hover:text-primary transition-colors ${scrolled ? 'text-white' : 'text-gray-700'}`}>
+              <a href="#pricing" className={`text-sm font-medium transition-colors ${scrolled ? 'text-white hover:text-gray-200' : 'text-gray-700 hover:text-primary'}`}>
                 Pricing
               </a>
               <Button variant="outline" size="sm" asChild>

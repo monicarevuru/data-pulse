@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import * as LucideIcons from "lucide-react";
+import { FeatureItemProps } from "../types/Hero.types";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -40,43 +41,45 @@ const iconVariants = {
   },
 };
 
-interface FeatureItemProps {
-  name: string;
-  description: string;
-  icon: keyof typeof LucideIcons;
-  index: number;
-  isInView: boolean;
-}
-
-export const FeatureItem = ({ name, description, icon, index, isInView }: FeatureItemProps) => {
-  const IconComponent = LucideIcons[icon] as React.ElementType;
-
+export const FeatureItem = ({
+  name,
+  description,
+  icon,
+  index,
+  isInView,
+}: FeatureItemProps) => {
+  const IconComponent = LucideIcons[icon as keyof typeof LucideIcons] as React.ElementType;
 
   return (
-    <motion.div key={`feature-${index}`} className="relative pl-16 feature-item" variants={itemVariants}>
+    <motion.div
+      key={`feature-${index}`}
+      className="relative pl-16 feature-item"
+      variants={itemVariants}>
       <dt className="text-base font-semibold leading-7 text-gray-900">
         <motion.div
           className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary"
-          variants={iconContainerVariants}
-        >
+          variants={iconContainerVariants}>
           <motion.div animate="animate" variants={iconVariants}>
-            {IconComponent && <IconComponent className="h-6 w-6 text-white" aria-hidden="true" />}
+            {IconComponent && (
+              <IconComponent
+                className="h-6 w-6 text-white"
+                aria-hidden="true"
+              />
+            )}
           </motion.div>
         </motion.div>
         <motion.span
           initial={{ opacity: 0, y: 10 }}
-          animate={isInView ? {opacity: 1, y: 0} : { opacity: 0, y: 10 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ delay: 0.2, duration: 0.5 }}>
           {name}
         </motion.span>
       </dt>
       <motion.dd
         className="mt-2 text-base leading-7 text-gray-600"
         initial={{ opacity: 0, x: -10 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {opacity: 0, y: -10}}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, y: -10 }}
+        transition={{ delay: 0.3, duration: 0.5 }}>
         {description}
       </motion.dd>
     </motion.div>
