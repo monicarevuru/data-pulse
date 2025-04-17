@@ -19,48 +19,54 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="py-10 sm:py-20 bg-white">
-      <div ref={ref} className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
             {C_PRICING.title}
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          {C_PRICING.shortDescription}
+            {C_PRICING.shortDescription}
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-          {C_PRICING.description}
+            {C_PRICING.description}
           </p>
 
           {/* Billing toggle */}
-            <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <div className="relative flex">
               <div className="flex items-center space-x-2 bg-gray-100 p-1 rounded-full">
-              <Button
-                variant={annual ? "ghost" : "default"}
-                className={`rounded-2xl m-0 ${
-                !annual ? "bg-white shadow-sm text-gray-900 hover:text-white" : "text-gray-500"
-                } py-2 px-4 text-sm font-medium whitespace-nowrap transition-all duration-400 ease-in`}
-                onClick={() => setAnnual(false)}>
-                {C_PRICING.buttons.monthly.text}
-              </Button>
-              <Button
-                variant={annual ? "default" : "ghost"}
-                className={`rounded-2xl m-0 ${
-                annual ? "bg-white shadow-sm group text-gray-900 hover:text-white" : "text-gray-500"
-                } py-2 px-4 text-sm font-medium whitespace-nowrap transition-all duration-400 ease-in`}
-                onClick={() => setAnnual(true)}>
-                {C_PRICING.buttons.annual.text}
-                <span className="text-primary text-xs font-bold ml-1 group-hover:text-white transition-all duration-400 ease-in">
-                -20%
-                </span>
-              </Button>
+                <Button
+                  variant={annual ? "ghost" : "default"}
+                  className={`rounded-2xl m-0 ${
+                    !annual
+                      ? "bg-white shadow-sm text-gray-900 hover:text-white"
+                      : "text-gray-500"
+                  } py-2 px-4 text-sm font-medium whitespace-nowrap transition-all duration-400 ease-in`}
+                  onClick={() => setAnnual(false)}>
+                  {C_PRICING.buttons.monthly.text}
+                </Button>
+                <Button
+                  variant={annual ? "default" : "ghost"}
+                  className={`rounded-2xl m-0 ${
+                    annual
+                      ? "bg-white shadow-sm group text-gray-900 hover:text-white"
+                      : "text-gray-500"
+                  } py-2 px-4 text-sm font-medium whitespace-nowrap transition-all duration-400 ease-in`}
+                  onClick={() => setAnnual(true)}>
+                  {C_PRICING.buttons.annual.text}
+                  <span className="text-primary text-xs font-bold ml-1 group-hover:text-white transition-all duration-400 ease-in">
+                    -20%
+                  </span>
+                </Button>
               </div>
             </div>
-            </div>
+          </div>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
-          {tiers.map((tier, index) => (
+        <div
+          ref={ref}
+          className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
+          {tiers.map((tier) => (
             <motion.div
               key={tier.id}
               className={`${
@@ -68,9 +74,8 @@ const Pricing = () => {
                   ? "z-10 relative mx-2 sm:my-0 lg:my-0"
                   : "sm:my-8 lg:my-0"
               } flex flex-col`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}>
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1, transition: { duration: 0.2, ease: "easeIn" } } : { scale: 0.95 }}>
               <Card
                 className={`${
                   tier.highlighted
