@@ -26,9 +26,8 @@ const Testimonials = () => {
           ref={ref}
           className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <TestimonialItem
+            <TestimonialItem key={`testimonial-${index}`}
               testimonial={testimonial}
-              index={index}
               isInView={isInView}></TestimonialItem>
           ))}
         </div>
