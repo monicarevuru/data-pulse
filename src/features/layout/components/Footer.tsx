@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="bg-linear-[60deg,var(--color-primary-600)_0%,var(--color-primary-700)_50%,var(--color-primary-700)_100%] shadow-2xl text-white">
       <div className="mx-auto max-w-7xl p-6 lg:px-8">
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-4">
           {/* Logo and Description */}
           <div className="flex items-center space-x-2">
             <LineChart className="h-6 w-6 text-white" />
@@ -39,8 +39,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom copyright */}
-        <div className="border-t border-white/10 pt-8 mt-8">
-          <p className="text-xs leading-5 text-gray-400 text-center">
+        <div className="border-t border-white/10 pt-4 mt-4">
+          <p className="text-xs leading-5 text-gray-400 text-left">
             &copy; {currentYear} {ProjectName}, Inc. All rights reserved.
           </p>
         </div>
