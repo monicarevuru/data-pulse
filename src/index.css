@@ -39,11 +39,11 @@
   --color-tertiary-900: #0f0e16;
   --color-tertiary-950: #08080c;
   --card: #fff;
-  --text-xs: '12px';
-  --text-sm: '14px';
-  --text-base: '16px';
-  --text-lg: '18px';
-  --text-xl: '20px';
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
 }
 
 html {

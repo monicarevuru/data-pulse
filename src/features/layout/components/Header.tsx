@@ -17,7 +17,7 @@ const Header: React.FC = () => {
 
   const getLinkClasses = (variant: NavLinkVariant) => {
     if (variant === LINK_VARIANT_ENUM.GHOST) {
-      return `text-sm font-medium transition-colors ${
+      return `text-sm font-medium transition-colors px-0 ${
         scrolled
           ? "text-white hover:text-gray-200"
           : "text-gray-700 hover:text-primary"
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-4">
+          <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link: NavLinkType) => (
               <Button
                 key={link.targetId}
@@ -95,9 +95,9 @@ const Header: React.FC = () => {
               }`}>
               <span className="sr-only">Open main menu</span>
               {mobileMenuOpen ? (
-                <X className="h-8 w-8 p-0" />
+                <X className="h-8 w-10 p-0" />
               ) : (
-                <Menu className="h-8 w-8 p-0" />
+                <Menu className="h-8 w-10 p-0" />
               )}
             </Button>
           </div>
