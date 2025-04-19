@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { FeatureItem } from "./FeatureItem";
-import { C_FEATURES } from "../HomeConstants";
+import { C_FEATURES } from "../constants/HomeConstants";
 import { features } from "../HomeMockData";
 
 const containerVariants = {

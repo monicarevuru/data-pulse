@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/common/components/ui/card";
 import { CheckIcon } from "lucide-react";
-import { C_PRICING } from "../HomeConstants";
+import { C_PRICING } from "../constants/HomeConstants";
 import { tiers } from "../HomeMockData";
 
 const Pricing = () => {

@@ -1,97 +1,21 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "@/common/components/ui/button";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { C_HERO } from "../HomeConstants";
+import { C_HERO } from "../constants/HomeConstants";
 import { MoveRight } from "lucide-react";
+import { containerVariants, itemVariants, dashboardVariants } from "../constants/MotionVariants";
+import { useAnimatedCounters } from "../hooks/useAnimatedCounters";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const controls = useAnimation();
   const inView = useInView(heroRef, { once: false, amount: 0.3 });
+  const counts = useAnimatedCounters(inView);
 
-  // Counter for statistics
-  const [counts, setCounts] = React.useState({
-    apiCalls: 0,
-    responseTime: 0,
-    errorRate: 0,
-    uptime: 0,
-  });
-
-  // Handle animations when section comes into view
   useEffect(() => {
-    if (inView) {
-      // Animate all hero elements
       controls.start("visible");
-
-      // Animate the counters
-      const apiCallsTarget = 2400000;
-      const responseTimeTarget = 126;
-      const errorRateTarget = 0.12;
-      const uptimeTarget = 99.98;
-
-      // Animation duration in ms
-      const duration = 2000;
-      const frameDuration = 1000 / 60;
-      const totalFrames = Math.round(duration / frameDuration);
-
-      // Start counter animations
-      let frame = 0;
-      const counter = setInterval(() => {
-        frame++;
-        const progress = frame / totalFrames;
-
-        setCounts({
-          apiCalls: Math.floor(apiCallsTarget * progress),
-          responseTime: Math.floor(responseTimeTarget * progress),
-          errorRate: parseFloat((errorRateTarget * progress).toFixed(2)),
-          uptime: parseFloat((uptimeTarget * progress).toFixed(2)),
-        });
-
-        if (frame === totalFrames) {
-          clearInterval(counter);
-        }
-      }, frameDuration);
-    }
   }, [inView, controls]);
-
-  // Animation variants for framer-motion
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        duration: 0.8,
-      },
-    },
-  };
-
-  const dashboardVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        damping: 12,
-        duration: 1.2,
-        delay: 0.6,
-      },
-    },
-  };
 
   return (
     <section className="relative overflow-hidden py-10 sm:py-20" ref={heroRef}>
@@ -137,7 +61,7 @@ const Hero = () => {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
-          className="mx-auto max-w-2xl text-center"
+          className="mx-auto max-w-2xl text-center pt-8 pb-12 sm:pt-4 sm:pb-24"
           variants={containerVariants}
           initial="hidden"
           animate={controls}>
@@ -172,40 +96,10 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="mt-16 flow-root sm:mt-32 lg:mx-4"
+          className="mt-4 flow-root lg:mx-4"
           variants={dashboardVariants}
           initial="hidden"
           animate={controls}
-          onViewportEnter={() => {
-            // Trigger number animations when this div is in view
-            const apiCallsTarget = 2400000;
-            const responseTimeTarget = 126;
-            const errorRateTarget = 0.12;
-            const uptimeTarget = 99.98;
-
-            // Animation duration in ms
-            const duration = 2000;
-            const frameDuration = 1000 / 60;
-            const totalFrames = Math.round(duration / frameDuration);
-
-            // Start counter animations
-            let frame = 0;
-            const counter = setInterval(() => {
-              frame++;
-              const progress = frame / totalFrames;
-
-              setCounts({
-                apiCalls: Math.floor(apiCallsTarget * progress),
-                responseTime: Math.floor(responseTimeTarget * progress),
-                errorRate: parseFloat((errorRateTarget * progress).toFixed(2)),
-                uptime: parseFloat((uptimeTarget * progress).toFixed(2)),
-              });
-
-              if (frame === totalFrames) {
-                clearInterval(counter);
-              }
-            }, frameDuration);
-          }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.3 }}>
           <div className="relative rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">

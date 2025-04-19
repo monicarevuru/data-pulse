@@ -1,4 +1,4 @@
-import { E_LucideFeatureIcons } from "./HomeConstants";
+import { E_LucideFeatureIcons } from "./constants/HomeConstants";
 
 export const features = [
   {
