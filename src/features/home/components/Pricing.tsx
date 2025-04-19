@@ -19,8 +19,8 @@ const Pricing = () => {
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
-    <section id="pricing" className="py-10 sm:py-20 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="pricing" className="py-10 bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-4">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
             {C_PRICING.title}
@@ -66,7 +66,7 @@ const Pricing = () => {
 
         <div
           ref={ref}
-          className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
+          className="mx-auto mt-12 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
           {tiers.map((tier) => (
             <motion.div
               key={tier.id}
@@ -76,7 +76,16 @@ const Pricing = () => {
                   : "sm:my-8 lg:my-0"
               } flex flex-col`}
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1, transition: { duration: 0.2, ease: "easeIn" } } : { scale: 0.95 }}>
+              animate={
+                isInView
+                  ? {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: { duration: 0.2, ease: "easeIn" },
+                    }
+                  : { scale: 0.95 }
+              }>
               <Card
                 className={`${
                   tier.highlighted

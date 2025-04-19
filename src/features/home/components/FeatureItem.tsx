@@ -48,14 +48,16 @@ export const FeatureItem = ({
   index,
   isInView,
 }: FeatureItemProps) => {
-  const IconComponent = LucideIcons[icon as keyof typeof LucideIcons] as React.ElementType;
+  const IconComponent = LucideIcons[
+    icon as keyof typeof LucideIcons
+  ] as React.ElementType;
 
   return (
     <motion.div
       key={`feature-${index}`}
       className="relative pl-16 feature-item"
       variants={itemVariants}>
-      <dt className="text-base font-semibold leading-7 text-gray-900">
+      <div className="text-base font-semibold leading-7 text-gray-900">
         <motion.div
           className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary"
           variants={iconContainerVariants}>
@@ -74,7 +76,7 @@ export const FeatureItem = ({
           transition={{ delay: 0.2, duration: 0.5 }}>
           {name}
         </motion.span>
-      </dt>
+      </div>
       <motion.dd
         className="mt-2 text-base leading-7 text-gray-600"
         initial={{ opacity: 0, x: -10 }}
