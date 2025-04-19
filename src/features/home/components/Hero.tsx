@@ -61,7 +61,7 @@ const Hero = () => {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
-          className="mx-auto max-w-2xl text-center pt-8 pb-12 sm:pt-4 sm:pb-24"
+          className="mx-auto max-w-2xl text-center pt-6 pb-12 sm:pt-2 sm:pb-20"
           variants={containerVariants}
           initial="hidden"
           animate={controls}>
@@ -96,7 +96,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="mt-4 flow-root lg:mx-4"
+          className="mt-10 flow-root lg:mx-4"
           variants={dashboardVariants}
           initial="hidden"
           animate={controls}
