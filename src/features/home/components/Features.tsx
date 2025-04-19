@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { FeatureItem } from "./FeatureItem";
-import { C_FEATURES, features } from "../constants.ts/HomeConstants";
+import { C_FEATURES } from "../HomeConstants";
+import { features } from "../HomeMockData";
 
 const containerVariants = {
   hidden: { opacity: 0 },

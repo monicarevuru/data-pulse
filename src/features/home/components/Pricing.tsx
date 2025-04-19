@@ -10,7 +10,8 @@ import {
   CardTitle,
 } from "@/common/components/ui/card";
 import { CheckIcon } from "lucide-react";
-import { C_PRICING, tiers } from "../constants.ts/HomeConstants";
+import { C_PRICING } from "../HomeConstants";
+import { tiers } from "../HomeMockData";
 
 const Pricing = () => {
   const [annual, setAnnual] = useState(true);

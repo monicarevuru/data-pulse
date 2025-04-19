@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { C_TESTIMONIALS, testimonials } from "../constants.ts/HomeConstants";
+import { C_TESTIMONIALS } from "../HomeConstants";
 import TestimonialItem from "./TestimonialItem";
+import { testimonials } from "../HomeMockData";
 
 const Testimonials = () => {
   const ref = useRef(null);

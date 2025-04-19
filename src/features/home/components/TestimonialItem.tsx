@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/common/components/ui/card";
 import { Avatar, AvatarFallback } from "@radix-ui/react-avatar";
 import { Quote } from "lucide-react";
 import { motion } from "framer-motion";
-import { TestimonialItemProps } from "../types/Hero.types";
+import { TestimonialItemProps } from "../Home.types";
 
 const TestimonialItem = ({
   testimonial,

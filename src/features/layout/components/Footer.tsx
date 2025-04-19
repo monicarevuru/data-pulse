@@ -1,36 +1,48 @@
 import { LineChart, Twitter, Github, Linkedin } from "lucide-react";
+import { FooterConstants, ProjectName } from "../LayoutConstants";
+
+const socialLinks = [
+  { href: "#", label: "Twitter", icon: Twitter },
+  { href: "#", label: "GitHub", icon: Github },
+  { href: "#", label: "LinkedIn", icon: Linkedin },
+];
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-linear-[60deg,var(--color-primary-600)_0%,var(--color-primary-700)_50%,var(--color-primary-700)_100%] shadow-2xl text-white">
       <div className="mx-auto max-w-7xl p-6 lg:px-8">
-        <div className="xl:gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <LineChart className="h-6 w-6 text-white" />
-              <span className="text-xl font-bold">DataPulse</span>
-            </div>
-            <p className="text-sm leading-6 text-gray-300">
-              Making data communication simple and effective for development teams worldwide.
-            </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-gray-300">
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-6 w-6" />
+        <div className="flex flex-col space-y-6">
+          {/* Logo and Description */}
+          <div className="flex items-center space-x-2">
+            <LineChart className="h-6 w-6 text-white" />
+            <span className="text-xl font-bold">{ProjectName}</span>
+          </div>
+          <p className="text-sm leading-6 text-gray-300">
+            {FooterConstants.shortDescription}
+          </p>
+
+          {/* Social Links */}
+          <div className="flex space-x-6">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                className="text-gray-400 hover:text-gray-300"
+                aria-label={label}
+              >
+                <Icon className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-300">
-                <span className="sr-only">GitHub</span>
-                <Github className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-300">
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-6 w-6" />
-              </a>
-            </div>
+            ))}
           </div>
         </div>
+
+        {/* Bottom copyright */}
         <div className="border-t border-white/10 pt-8 mt-8">
-          <p className="text-xs leading-5 text-gray-400">&copy; {new Date().getFullYear()} DataPulse, Inc. All rights reserved.</p>
+          <p className="text-xs leading-5 text-gray-400 text-center">
+            &copy; {currentYear} {ProjectName}, Inc. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

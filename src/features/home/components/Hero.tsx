@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Button } from "@/common/components/ui/button";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { C_HERO } from "../constants.ts/HomeConstants";
+import { C_HERO } from "../HomeConstants";
 import { MoveRight } from "lucide-react";
 
 const Hero = () => {

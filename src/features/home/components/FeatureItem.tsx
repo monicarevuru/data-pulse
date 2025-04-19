@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import * as LucideIcons from "lucide-react";
-import { FeatureItemProps } from "../types/Hero.types";
+import { FeatureItemProps } from "../Home.types";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
