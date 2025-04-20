@@ -55,7 +55,6 @@ const DashboardSvg = forwardRef<HTMLDivElement | null, DashboardSvgProps>(
           rotateX: rotateX,
           x: mouseX,
           y: mouseY,
-          transformStyle: "preserve-3d",
         }}
         variants={dashboardVariants}
         initial="hidden"

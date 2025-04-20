@@ -19,8 +19,8 @@ const Pricing = () => {
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
-    <section id="pricing" className="py-10 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-4">
+    <section id="pricing" className="py-16 bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-3">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
             {C_PRICING.title}

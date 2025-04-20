@@ -26,7 +26,7 @@ const Features = () => {
   }, [isInView, controls]);
 
   return (
-    <section id="features" className="py-10 bg-white">
+    <section id="features" className="py-16 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
@@ -41,9 +41,9 @@ const Features = () => {
         </div>
         <div
           ref={ref}
-          className="mx-auto mt-12 max-w-2xl lg:mt-24 lg:max-w-4xl">
+          className="mx-auto mt-12">
           <motion.dl
-            className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16"
+            className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-4 lg:gap-y-16"
             variants={containerVariants}
             initial="hidden"
             animate={controls}>

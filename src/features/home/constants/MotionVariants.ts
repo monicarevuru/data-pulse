@@ -27,3 +27,29 @@ export const containerVariants = {
     },
   };
   
+  export const iconContainerVariants = {
+    hidden: { scale: 0.6, opacity: 0, borderRadius: "30%" },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      borderRadius: "20%",
+      transition: {
+        type: "spring",
+        bounce: 0.5,
+        duration: 0.6,
+      },
+    },
+  };
+  
+  export const iconVariants = {
+    animate: {
+      scale: [0.9, 1.1, 0.9],
+      opacity: [0.8, 1, 0.8],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+  
