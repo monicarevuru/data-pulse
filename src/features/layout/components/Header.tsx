@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { X, Menu, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/common/components/ui/button";
-import { NavLinkType, NavLinkVariant } from "../Layout.types";
+import { NavLinkType } from "../Layout.types";
 import { LINK_VARIANT_ENUM, ProjectName, navLinks } from "../LayoutConstants";
+import { Button } from "@/components/ui/button";
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,17 +14,6 @@ const Header: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const getLinkClasses = (variant: NavLinkVariant) => {
-    if (variant === LINK_VARIANT_ENUM.GHOST) {
-      return `text-sm font-medium transition-colors px-0 ${
-        scrolled
-          ? "text-white hover:text-gray-200"
-          : "text-gray-700 hover:text-primary"
-      }`;
-    }
-    return undefined;
-  };
 
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -38,8 +27,8 @@ const Header: React.FC = () => {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         scrolled
-          ? "backdrop-blur-sm shadow-2xl bg-linear-[60deg,var(--color-primary-600)_0%,var(--color-primary-700)_50%,var(--color-primary-700)_100%]"
-          : "bg-transparent"
+          ? "backdrop-blur-sm bg-primary shadow-2xl shadow-primary-300"
+          : "bg-primary shadow-none"
       }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -54,16 +43,10 @@ const Header: React.FC = () => {
               }
               transition={{ duration: 0.5 }}
               whileTap={{ rotate: -10 }}>
-              <LineChart
-                className={`h-8 w-8 ${
-                  scrolled ? "text-white" : "text-primary"
-                }`}
-              />
+              <LineChart className={`h-8 w-8 ${"text-secondary-900"}`} />
             </motion.div>
             <motion.span
-              className={`text-xl font-bold ${
-                scrolled ? "text-white" : "text-gray-900"
-              }`}
+              className={`text-xl font-bold ${"text-secondary-900"}`}
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}>
@@ -79,7 +62,7 @@ const Header: React.FC = () => {
                 variant={link.variant}
                 size="sm"
                 onClick={() => handleScroll(link.targetId)}
-                className={getLinkClasses(link.variant)}>
+                className={`${link.className} cursor-pointer text-sm font-medium`}>
                 {link.label}
               </Button>
             ))}
@@ -90,9 +73,7 @@ const Header: React.FC = () => {
             <Button
               variant={LINK_VARIANT_ENUM.GHOST}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`inline-flex items-center justify-center rounded-md p-0 ${
-                scrolled ? "text-white" : "text-gray-700"
-              }`}>
+              className={`cursor-pointer inline-flex items-center justify-center rounded-md p-0 text-primary-700`}>
               <span className="sr-only">Open main menu</span>
               {mobileMenuOpen ? (
                 <X className="h-8 w-10 p-0" />
@@ -117,7 +98,7 @@ const Header: React.FC = () => {
               variant={link.variant}
               size="sm"
               onClick={() => handleScroll(link.targetId)}
-              className="w-full justify-start py-4 text-md">
+              className={`cursor-pointer w-full justify-start py-4 text-md shadow-none`}>
               {link.label}
             </Button>
           ))}
