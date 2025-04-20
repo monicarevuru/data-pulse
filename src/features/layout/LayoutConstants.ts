@@ -19,14 +19,24 @@ export enum NAV_MENU_ITEMS {
     FEATURES = "features",
     TESTIMONIALS = "testimonials",
     PRICING = "pricing",
-    LOGIN = "Log in",
     DEMO = "Get started",
 }
 
 export const navLinks: NavLinkType[] = [
-    { label: "Features", targetId: NAV_MENU_ITEMS.FEATURES, variant: LINK_VARIANT_ENUM.GHOST },
-    { label: "Testimonials", targetId: NAV_MENU_ITEMS.TESTIMONIALS, variant: LINK_VARIANT_ENUM.GHOST },
-    { label: "Pricing", targetId: NAV_MENU_ITEMS.PRICING, variant: LINK_VARIANT_ENUM.GHOST },
-    { label: "Log in", targetId: NAV_MENU_ITEMS.LOGIN, variant: LINK_VARIANT_ENUM.OUTLINE },
-    { label: "Get started", targetId: NAV_MENU_ITEMS.DEMO, variant: LINK_VARIANT_ENUM.DEFAULT },
+    {
+        label: "Features", targetId: NAV_MENU_ITEMS.FEATURES, variant: LINK_VARIANT_ENUM.GHOST,
+        className: "text-primary-950 hover:text-primary-600"
+    },
+    {
+        label: "Testimonials", targetId: NAV_MENU_ITEMS.TESTIMONIALS, variant: LINK_VARIANT_ENUM.GHOST,
+        className: "text-primary-950 hover:text-primary-600"
+    },
+    {
+        label: "Pricing", targetId: NAV_MENU_ITEMS.PRICING, variant: LINK_VARIANT_ENUM.GHOST,
+        className: "text-primary-950 hover:text-primary-600"
+    },
+    {
+        label: "Get started", targetId: NAV_MENU_ITEMS.DEMO, variant: LINK_VARIANT_ENUM.DEFAULT,
+        className: "text-primary bg-secondary-500 border-secondary-500 hover:bg-secondary-600 hover-border-secondary-600 px-8 py-4.5"
+    },
 ];

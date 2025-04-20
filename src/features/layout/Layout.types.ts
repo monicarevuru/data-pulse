@@ -4,6 +4,7 @@ export type NavLinkType = {
     label: string;
     targetId: NAV_MENU_ITEMS;
     variant: LINK_VARIANT_ENUM;
+    className: string;
 };
 
 export type NavLinkVariant = LINK_VARIANT_ENUM;

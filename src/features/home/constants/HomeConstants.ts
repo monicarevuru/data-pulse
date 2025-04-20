@@ -1,14 +1,11 @@
 export const C_HERO = {
   title: "New Features Available",
-  shortDescription: "Data insights that drive growth",
+  shortDescription: "Unlock Powerful Data Insights to Accelerate Your Growth",
   description:
     "Powerful analytics and team collaboration for developers. Share insights with clients and make informed decisions faster.",
   buttons: {
     free_trial: {
       text: "Start free trial",
-    },
-    learn_more: {
-      text: "Learn more",
     },
   },
 };
@@ -44,7 +41,6 @@ export const C_PRICING = {
 };
 
 export enum E_LucideFeatureIcons {
-  LineChart = "LineChart",
   Users = "Users",
   MessageSquare = "MessageSquare",
   Share2 = "Share2",

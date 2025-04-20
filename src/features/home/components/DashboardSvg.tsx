@@ -26,10 +26,9 @@ const DashboardSvg = forwardRef<HTMLDivElement | null, DashboardSvgProps>(
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
     const { scrollYProgress } = useScroll();
-    const rotateX = useTransform(scrollYProgress, [0, 0.1], [25, 0]);
+    const rotateX = useTransform(scrollYProgress, [0, 0.2], [30, 0]);
 
     const counts = useAnimatedCounters(inView);
-
     const handleMouseMove = (
       e: React.MouseEvent<HTMLDivElement, MouseEvent>
     ) => {
@@ -50,7 +49,7 @@ const DashboardSvg = forwardRef<HTMLDivElement | null, DashboardSvgProps>(
 
     return (
       <motion.div
-        className="flow-root border-transparent rounded-xl lg:mx-4 sm:scale-90"
+        className={`flow-root border-transparent rounded-xl lg:mx-4 sm:scale-90`}
         style={{
           rotateX: rotateX,
           x: mouseX,
@@ -71,7 +70,7 @@ const DashboardSvg = forwardRef<HTMLDivElement | null, DashboardSvgProps>(
               viewBox="0 0 1000 600"
               preserveAspectRatio="xMidYMid meet">
               <rect width="1000" height="600" fill="#F7F9FC" />
-              <g transform="translate(50, 50)">
+              <g transform="translate(40, 40)">
                 {/* Dashboard header */}
                 <rect
                   width="900"
@@ -86,16 +85,22 @@ const DashboardSvg = forwardRef<HTMLDivElement | null, DashboardSvgProps>(
                   y="35"
                   fontSize="18"
                   fontWeight="600"
-                  fill="#1E40AF">
-                  DataPulse Analytics
+                  fill="#100f57">
+                  Data Pulse Analytics
                 </text>
-                <circle cx="850" cy="30" r="20" fill="#E6F0FF" />
+                <circle
+                  cx="850"
+                  cy="30"
+                  r="20"
+                  stroke="#8fabff"
+                  fill="#b9cdff"
+                />
                 <text
                   x="850"
                   y="35"
                   fontSize="14"
                   fontWeight="600"
-                  fill="#3B82F6"
+                  fill="#1513c0"
                   textAnchor="middle">
                   JD
                 </text>
@@ -103,7 +108,7 @@ const DashboardSvg = forwardRef<HTMLDivElement | null, DashboardSvgProps>(
                 {/* Stats row */}
                 <g transform="translate(0, 80)">
                   {[0, 1, 2, 3].map((i) => (
-                    <g key={i} transform={`translate(${i * 225}, 0)`}>
+                    <g key={i} transform={`translate(${i * 228}, 0)`}>
                       <rect
                         width="215"
                         height="100"
@@ -303,7 +308,8 @@ const DashboardSvg = forwardRef<HTMLDivElement | null, DashboardSvgProps>(
                     width="240"
                     height="30"
                     rx="15"
-                    fill="#EFF6FF"
+                    stroke="#637aff"
+                    fill="#d8e5ff"
                     animate={{
                       opacity: [0.8, 1, 0.8],
                       scale: [0.98, 1, 0.98],
@@ -318,7 +324,7 @@ const DashboardSvg = forwardRef<HTMLDivElement | null, DashboardSvgProps>(
                     x="140"
                     y="110"
                     fontSize="12"
-                    fill="#3B82F6"
+                    fill="#100f57"
                     textAnchor="middle">
                     Reply to messages
                   </text>
