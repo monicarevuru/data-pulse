@@ -1,21 +1,46 @@
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { C_TESTIMONIALS } from "../constants/HomeConstants";
 import TestimonialItem from "./TestimonialItem";
 import { testimonials } from "../HomeMockData";
 import { Badge } from "@/components/ui/badge";
 
 const Testimonials = () => {
-  const ref = useRef(null);
-
+  const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
+  const controls = useAnimation();
 
   useEffect(() => {
     if (ref.current) {
-      const el = ref.current as HTMLElement;
+      const el = ref.current;
       setWidth(el.scrollWidth - el.clientWidth);
     }
   }, []);
+
+  const animateSlider = useCallback((mouseEnterOrLeave: boolean, newDuration: number) => {
+    controls.start({
+      x: mouseEnterOrLeave ? -width : [0, -width],
+      transition: {
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "linear",
+        duration: newDuration,
+      },
+    });
+  }, [controls, width]);
+
+  useEffect(() => {
+    animateSlider(false, 20);
+  }, [animateSlider, controls, width]);
+  
+
+  const handleMouseEnter = () => {
+    animateSlider(true, 50)
+  };
+
+  const handleMouseLeave = () => {
+    animateSlider(true, 20)
+  };
 
   return (
     <section id="testimonials" className="py-16 bg-[#f4f5fb] overflow-hidden">
@@ -36,17 +61,13 @@ const Testimonials = () => {
         <motion.div
           ref={ref}
           className="mt-12 flex space-x-6"
-          animate={{ x: [0, -width] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 10,
-            ease: "linear",
-          }}>
+          animate={controls}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}>
           {testimonials.map((testimonial, index) => (
             <div
               key={`testimonial-${index}`}
-              className="max-w-[30%] flex-shrink-0">
+              className="max-w-[100%] md:max-w-[50%] lg:max-w-[30%] flex-shrink-0">
               <TestimonialItem testimonial={testimonial} isInView={true} />
             </div>
           ))}

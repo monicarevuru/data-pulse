@@ -166,3 +166,31 @@ export const tiers = [
     highlighted: false,
   },
 ];
+
+export const faqs = [
+  {
+    question: "How often is the data updated?",
+    answer:
+      "Data is updated in real-time, providing you with the most current insights available.",
+  },
+  {
+    question: "Can I customize my dashboards?",
+    answer:
+      "Absolutely! Our platform allows full customization based on your needs.",
+  },
+  {
+    question: "Is real-time data updating available?",
+    answer:
+      "Absolutely. The dashboard is built for real-time updates without manual refreshing.",
+  },
+  {
+    question: "Is there a free trial available?",
+    answer:
+      "Yes! You can get started for free. Premium plans offer more customization and advanced analytics.",
+  },
+  {
+    question: "Can I cancel anytime?",
+    answer:
+      "Yes, there are no long-term contracts. You can cancel your subscription anytime from your dashboard.",
+  },
+];
